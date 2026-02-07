@@ -12,6 +12,7 @@ This file serves as the source of truth for the project's context, architecture,
 *   **Replay Parsing:** **Rust**.
     *   Chosen for speed and safety over C++. Avoids CMake complexity.
     *   References: `evido/wotreplay-parser`, `rajesh-rahul/wot-replay-tools`.
+    *   **Design:** See `replays-parser/DESIGN.md` for architecture (Detector -> Adapter -> Unified Model) and JSON output structure.
 *   **Backend / Server:** **Elixir**.
     *   Chosen for high concurrency and scalability (B2C server).
 *   **Machine Learning (ML):**
