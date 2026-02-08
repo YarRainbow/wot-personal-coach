@@ -29,6 +29,9 @@ flowchart LR
 1.  **Parser (Rust)**:
     *   **Rayon**: A Rust library for "Data Parallelism". It takes a list of 1 million files and automatically spreads the work across all CPU cores (e.g., 16 threads) with zero manual thread management.
     *   **Dead Letter Queue (DLQ)**: If a replay fails (corrupt/unsupported), its ID and error are written to `dlq.json` instead of crashing the stream.
+    *   **Entity Definitions**:
+        *   **Hybrid Loading**: The parser first looks for `ids_<version>.json` files in the working directory for runtime overrides.
+        *   **Embedded Fallback**: If no file is found, it uses definitions compiled directly into the binary (via `build.rs`).
 2.  **Stream**: Bytes flow from Parser to Enricher via RAM. No SSD writes for intermediate data.
 
 ## 3. Data Format: JSONL (Streaming)
