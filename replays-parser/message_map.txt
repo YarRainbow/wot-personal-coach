@@ -1,0 +1,888 @@
+=== World of Tanks Entity & Message Map ===
+
+Entity ID: 0 (Account)
+
+Entity ID: 1 (Avatar)
+  Client Methods:
+    0x00 (0): onChatAction
+    0x01 (1): messenger_onActionByServer_chat2
+    0x02 (2): onCmdResponse
+    0x03 (3): onCmdResponseExt
+    0x04 (4): processInvitations
+    0x05 (5): onTokenReceived
+    0x06 (6): updateTeamsHealthPercentage
+    0x07 (7): notifyCannotStartRecovering
+    0x08 (8): notifyCancelled
+    0x09 (9): updateState
+    0x0A (10): redrawVehicleOnRespawn
+    0x0B (11): explodeVehicleBeforeRespawn
+    0x0C (12): updateRespawnVehicles
+    0x0D (13): updateRespawnCooldowns
+    0x0E (14): updateRespawnInfo
+    0x0F (15): updateVehicleLimits
+    0x10 (16): updatePlayerLives
+    0x11 (17): onTeamLivesRestored
+    0x12 (18): updateSpawnList
+    0x13 (19): removeVehicle
+    0x14 (20): onVehicleHealthChanged
+    0x15 (21): externalTrigger
+    0x16 (22): welcomeToSector
+    0x17 (23): onStepRepairPointAction
+    0x18 (24): onSectorBaseAction
+    0x19 (25): enteringProtectionZone
+    0x1A (26): leavingProtectionZone
+    0x1B (27): protectionZoneShooting
+    0x1C (28): onSectorShooting
+    0x1D (29): onXPUpdated
+    0x1E (30): onCrewRoleFactorAndRankUpdate
+    0x1F (31): onRankUpdate
+    0x20 (32): showDestructibleShotResults
+    0x21 (33): onDestructibleDestroyed
+    0x22 (34): update
+    0x23 (35): onKickedFromServer
+    0x24 (36): onIGRTypeChanged
+    0x25 (37): onAutoAimVehicleLost
+    0x26 (38): receiveAccountStats
+    0x27 (39): updateVehicleHealth
+    0x28 (40): updateVehicleAmmo
+    0x29 (41): onSwitchViewpoint
+    0x2A (42): onBootcampEvent
+    0x2B (43): updateVehicleSetting
+    0x2C (44): updateTargetingInfo
+    0x2D (45): updateTargetVehicleID
+    0x2E (46): showOwnVehicleHitDirection
+    0x2F (47): showOtherVehicleDamagedDevices
+    0x30 (48): showShotResults
+    0x31 (49): showDevelopmentInfo
+    0x32 (50): showHittingArea
+    0x33 (51): showCarpetBombing
+    0x34 (52): showTracer
+    0x35 (53): stopTracer
+    0x36 (54): explodeProjectile
+    0x37 (55): onRoundFinished
+    0x38 (56): onKickedFromArena
+    0x39 (57): onBattleEvents
+    0x3A (58): battleEventsSummary
+    0x3B (59): updateArena
+    0x3C (60): updatePositions
+    0x3D (61): receivePhysicsDebugInfo
+    0x3E (62): updateCarriedFlagPositions
+    0x3F (63): receiveNotification
+    0x40 (64): onRepairPointAction
+    0x41 (65): updateAvatarPrivateStats
+    0x42 (66): updateResourceAmount
+    0x43 (67): onFrictionWithVehicle
+    0x44 (68): onCollisionWithVehicle
+    0x45 (69): onSmoke
+    0x46 (70): onCombatEquipmentShotLaunched
+    0x47 (71): updateQuestProgress
+    0x48 (72): updateVehicleQuickShellChanger
+    0x49 (73): enemySPGHit
+    0x4A (74): enemySPGShotSound
+    0x4B (75): handleScriptEventFromServer
+    0x4C (76): setUpdatedGoodiesSnapshot
+  Properties:
+    0x00 (0): remoteCamera
+    0x01 (1): isObserverFPV
+    0x02 (2): numOfObservers
+    0x03 (3): abTestFeatures
+    0x04 (4): state
+    0x05 (5): name
+    0x06 (6): sessionID
+    0x07 (7): account
+    0x08 (8): playerVehicle
+    0x09 (9): arena
+    0x0A (10): arenaVehiclesIDs
+    0x0B (11): accountStartedAt
+    0x0C (12): accountSessionID
+    0x0D (13): arenaUniqueID
+    0x0E (14): syncData
+    0x0F (15): arenaTypeID
+    0x10 (16): accountDBID
+    0x11 (17): arenaBonusType
+    0x12 (18): arenaGuiType
+    0x13 (19): arenaExtraData
+    0x14 (20): weatherPresetID
+    0x15 (21): denunciationsLeft
+    0x16 (22): clientCtx
+    0x17 (23): tkillIsSuspected
+    0x18 (24): arenaBase
+    0x19 (25): team
+    0x1A (26): playerVehicleBase
+    0x1B (27): playerVehicleID
+    0x1C (28): playerVehicleTypeCompDescr
+    0x1D (29): isObserverBothTeams
+    0x1E (30): observableTeamID
+    0x1F (31): isGunLocked
+    0x20 (32): ownVehicleGear
+    0x21 (33): ownVehicleAuxPhysicsData
+    0x22 (34): ammo
+    0x23 (35): ammoViews
+    0x24 (36): cp
+    0x25 (37): historyLoggingFlags
+    0x26 (38): heatmapLoggingFlags
+    0x27 (39): gameParamsRev
+    0x28 (40): accountDBIDOnCell
+    0x29 (41): arenaUniqueIDOnCell
+    0x2A (42): arenaTypeIDOnCell
+    0x2B (43): arenaBonusTypeOnCell
+    0x2C (44): orderingRoster
+    0x2D (45): viewpoints
+    0x2E (46): customizationDisplayType
+    0x2F (47): inBattleQuestNames
+    0x30 (48): inBattleQuestProgresses
+    0x31 (49): playLimits
+    0x32 (50): arenaGameParamRev
+    0x33 (51): goodiesSnapshot
+  Cell Methods:
+    0x00 (0): switchObserverFPV
+    0x01 (1): setRemoteCamera
+    0x02 (2): setNumOfObservers
+    0x03 (3): onXPUpdated
+    0x04 (4): autoAim
+    0x05 (5): moveTo
+    0x06 (6): bindToVehicle
+    0x07 (7): monitorVehicleDamagedDevices
+    0x08 (8): onOwnVehicleStatusChanged
+    0x09 (9): allowUnbindingFromVehicle
+    0x0A (10): forbidUnbindingFromVehicle
+    0x0B (11): discloseEntities
+    0x0C (12): receiveVisibilityUpdate
+    0x0D (13): receiveVisibilityLists
+    0x0E (14): receiveVehicleDamagedDevices
+    0x0F (15): lockGunOnClient
+    0x10 (16): showShotResults
+    0x11 (17): explodeProjectile
+    0x12 (18): refreshVehicle
+    0x13 (19): activateEquipment
+    0x14 (20): setEquipmentApplicationPoint
+    0x15 (21): switchViewPointOrBindToVehicle
+    0x16 (22): grantRagePoints
+    0x17 (23): harm_receiveAttackResults
+    0x18 (24): pauseMechanics
+    0x19 (25): updateOwnVehicleAuxPhysicsDataAndGear
+    0x1A (26): sendAmmoStatusToClient
+    0x1B (27): setDualGunCharger
+    0x1C (28): reportClientStats
+    0x1D (29): onRankUpdated
+    0x1E (30): vehicle_moveWith
+    0x1F (31): vehicle_shoot
+    0x20 (32): vehicle_trackWorldPointWithGun
+    0x21 (33): vehicle_trackRelativePointWithGun
+    0x22 (34): vehicle_stopTrackingWithGun
+    0x23 (35): vehicle_changeSetting
+    0x24 (36): setServerMarker
+    0x25 (37): logLag
+  Base Methods:
+    0x00 (0): joinChatChannel
+    0x01 (1): leaveChatChannel
+    0x02 (2): onChatAction
+    0x03 (3): onUserChatChannelCreated
+    0x04 (4): chatCommandFromClient
+    0x05 (5): chatCommand
+    0x06 (6): inviteCommand
+    0x07 (7): ackCommand
+    0x08 (8): keepAlive
+    0x09 (9): keepAlive
+    0x0A (10): onStreamComplete
+    0x0B (11): setState
+    0x0C (12): setCollectOnlyMode
+    0x0D (13): setBattleChannels
+    0x0E (14): changeMemberStatus
+    0x0F (15): setWorkingState
+    0x10 (16): streamStringToClient
+    0x11 (17): messenger_onActionByServer_chat2
+    0x12 (18): messenger_onActionByClient_chat2
+    0x13 (19): messenger_onActionForClient_chat2
+    0x14 (20): doCmdStr
+    0x15 (21): doCmdInt
+    0x16 (22): doCmdInt2
+    0x17 (23): doCmdInt3
+    0x18 (24): doCmdInt4
+    0x19 (25): doCmdInt2Str
+    0x1A (26): doCmdInt3Str
+    0x1B (27): doCmdIntArr
+    0x1C (28): doCmdIntStr
+    0x1D (29): doCmdIntStrArr
+    0x1E (30): doCmdIntArrStrArr
+    0x1F (31): doCmdStrArr
+    0x20 (32): avatarClientProxy_showShotResults
+    0x21 (33): avatarClientProxy_showDevelopmentInfo
+    0x22 (34): avatarClientProxy_onXPUpdated
+    0x23 (35): avatarClientProxy_updateQuestProgress
+    0x24 (36): avatarClientProxy_showHittingArea
+    0x25 (37): avatarClientProxy_showCarpetBombing
+    0x26 (38): avatarClientProxy_onRankUpdate
+    0x27 (39): avatarClientProxy_onCombatEquipmentShotLaunched
+    0x28 (40): avatarClientProxy_updateQuestProgress
+    0x29 (41): teamHealthBar_updateTeamsHealthPercentage
+    0x2A (42): protectionZone_enteringProtectionZone
+    0x2B (43): protectionZone_leavingProtectionZone
+    0x2C (44): protectionZone_protectionZoneShooting
+    0x2D (45): recoveryMechanic_notifyCannotStartRecovering
+    0x2E (46): recoveryMechanic_notifyCancelled
+    0x2F (47): recoveryMechanic_updateState
+    0x30 (48): destructibleEntity_onDestroyed
+    0x31 (49): respawnController_requestRespawnGroupChange
+    0x32 (50): respawnController_chooseVehicleForRespawn
+    0x33 (51): respawnController_performRespawn
+    0x34 (52): respawnController_redrawVehicleOnRespawn
+    0x35 (53): respawnController_updateRespawnVehicles
+    0x36 (54): respawnController_updateRespawnCooldowns
+    0x37 (55): respawnController_updateRespawnInfo
+    0x38 (56): respawnController_updateVehicleLimits
+    0x39 (57): respawnController_onTeamLivesRestored
+    0x3A (58): respawnController_updatePlayerLives
+    0x3B (59): respawnController_chooseRespawnZone
+    0x3C (60): respawnController_switchSetup
+    0x3D (61): vehiclesSpawnListStorage_updateSpawnList
+    0x3E (62): enableFrontLineDevInfo
+    0x3F (63): onXPUpdated
+    0x40 (64): onCreateCellSuccess
+    0x41 (65): logLag
+    0x42 (66): kickSelf
+    0x43 (67): setClientReady
+    0x44 (68): leaveArena
+    0x45 (69): unlockUnusedVehicles
+    0x46 (70): confirmBattleResultsReceiving
+    0x47 (71): makeDenunciation
+    0x48 (72): banUnbanUser
+    0x49 (73): requestToken
+    0x4A (74): banForTKill
+    0x4B (75): sendAccountStats
+    0x4C (76): setClientCtx
+    0x4D (77): updateArena
+    0x4E (78): updateArenaVehicleListAddedUpdated
+    0x4F (79): vehicle_teleport
+    0x50 (80): vehicle_replenishAmmo
+    0x51 (81): onRemovedFromArena
+    0x52 (82): onKickedFromArena
+    0x53 (83): onRoundStarted
+    0x54 (84): onRoundFinished
+    0x55 (85): leaveDisconnected
+    0x56 (86): setDevelopmentFeature
+    0x57 (87): addBotToArena
+    0x58 (88): receiveFakeShot
+    0x59 (89): logStreamCorruption
+    0x5A (90): logMemoryCriticalEvent
+    0x5B (91): releaseClientForLogin
+    0x5C (92): onBattleResultsAvailable
+    0x5D (93): smartDestroy
+    0x5E (94): stopByFailure
+    0x5F (95): setAvatarClient
+    0x60 (96): leaveArenaByAccount
+    0x61 (97): addSyncData
+    0x62 (98): removeSyncData
+    0x63 (99): updateGoodiesSnapshot
+
+Entity ID: 2 (ArenaInfo)
+  Client Methods:
+    0x00 (0): showCarpetBombing
+  Properties:
+    0x00 (0): vehiclesAreaMarkerParams
+    0x01 (1): planeTrajectory
+
+Entity ID: 3 (ClientSelectableObject)
+  Properties:
+    0x00 (0): modelName
+    0x01 (1): selectionId
+    0x02 (2): mouseOverSoundName
+    0x03 (3): isOver3DSound
+    0x04 (4): clickSoundName
+    0x05 (5): isClick3DSound
+    0x06 (6): edgeMode
+
+Entity ID: 4 (HangarVehicle)
+
+Entity ID: 5 (Vehicle)
+  Client Methods:
+    0x00 (0): onVehiclePickup
+    0x01 (1): onExtraHitted
+    0x02 (2): onHealthChanged
+    0x03 (3): showShooting
+    0x04 (4): updateLaserSight
+    0x05 (5): showDamageFromShot
+    0x06 (6): showDamageFromExplosion
+    0x07 (7): showAmmoBayEffect
+    0x08 (8): onPushed
+    0x09 (9): onStaticCollision
+    0x0A (10): showRammingEffect
+  Properties:
+    0x00 (0): remoteCamera
+    0x01 (1): steeringAngles
+    0x02 (2): wheelsScroll
+    0x03 (3): wheelsState
+    0x04 (4): burnoutLevel
+    0x05 (5): perkEffects
+    0x06 (6): perks
+    0x07 (7): perksRibbonNotify
+    0x08 (8): isStrafing
+    0x09 (9): postmortemViewPointName
+    0x0A (10): isHidden
+    0x0B (11): physicsMode
+    0x0C (12): siegeState
+    0x0D (13): gunAnglesPacked
+    0x0E (14): publicInfo
+    0x0F (15): health
+    0x10 (16): isCrewActive
+    0x11 (17): engineMode
+    0x12 (18): damageStickers
+    0x13 (19): publicStateModifiers
+    0x14 (20): compDescr
+    0x15 (21): stunInfo
+    0x16 (22): status
+    0x17 (23): invisibility
+    0x18 (24): radioDistance
+    0x19 (25): circularVisionRadius
+    0x1A (26): detectedVehicles
+    0x1B (27): isObservedByEnemy
+    0x1C (28): sixthSenseState
+    0x1D (29): rammingBonus
+    0x1E (30): componentsData
+    0x1F (31): ammo
+    0x20 (32): crewCompactDescrs
+    0x21 (33): enhancements
+    0x22 (34): setups
+    0x23 (35): setupsIndexes
+    0x24 (36): customRoleSlotTypeId
+    0x25 (37): vehPerks
+    0x26 (38): vehPostProgression
+    0x27 (39): disabledSwitches
+    0x28 (40): isClientConnected
+    0x29 (41): avatar
+    0x2A (42): avatarID
+    0x2B (43): arenaBase
+    0x2C (44): botKind
+    0x2D (45): eventBotKind
+    0x2E (46): respawnOffset
+    0x2F (47): xRayFactor
+    0x30 (48): foliageInvisibilityFactor
+    0x31 (49): masterVehID
+    0x32 (50): needsCount
+    0x33 (51): arenaTypeID
+    0x34 (52): arenaBonusType
+    0x35 (53): tkillRating
+    0x36 (54): cp
+    0x37 (55): arenaUniqueID
+    0x38 (56): accountDBID
+    0x39 (57): historyLoggingFlags
+    0x3A (58): heatmapLoggingFlags
+    0x3B (59): state
+    0x3C (60): arena
+    0x3D (61): inspiringEffect
+    0x3E (62): healingEffect
+    0x3F (63): dotEffect
+    0x40 (64): inspired
+    0x41 (65): healing
+    0x42 (66): healOverTime
+    0x43 (67): debuff
+    0x44 (68): isSpeedCapturing
+    0x45 (69): isBlockingCapture
+    0x46 (70): dogTag
+    0x47 (71): isMyVehicle
+    0x48 (72): quickShellChangerFactor
+    0x49 (73): onRespawnReloadTimeFactor
+    0x4A (74): ownVehiclePosition
+    0x4B (75): enableExternalRespawn
+    0x4C (76): botDisplayStatus
+    0x4D (77): thermalVisionFinishTime
+  Cell Methods:
+    0x00 (0): teamBase_receivePoints
+    0x01 (1): teamBase_onCaptured
+    0x02 (2): sectorBase_receivePoints
+    0x03 (3): sectorBase_onCaptured
+    0x04 (4): sectorBase_onAction
+    0x05 (5): sectorBase_onCapturePointsBlocked
+    0x06 (6): sectorBase_onCapturePointsBlockedComplete
+    0x07 (7): repairBase_onAction
+    0x08 (8): setRemoteCamera
+    0x09 (9): battleFeedback_onBattleEvent
+    0x0A (10): battleFeedback_onDeath
+    0x0B (11): harm_receiveShot
+    0x0C (12): harm_receiveExplosion
+    0x0D (13): harm_receivePressure
+    0x0E (14): harm_receiveRamming
+    0x0F (15): harm_receiveMiss
+    0x10 (16): harm_receiveCeilingHit
+    0x11 (17): harm_receiveAttackResults
+    0x12 (18): harm_onCombatEquipmentShootingStarted
+    0x13 (19): sector_onEnterSector
+    0x14 (20): sector_onLeaveSector
+    0x15 (21): sector_onEnemySectorCaptured
+    0x16 (22): sector_onSectorShooting
+    0x17 (23): protectionZone_onEnterProtectionZone
+    0x18 (24): protectionZone_onLeaveProtectionZone
+    0x19 (25): protectionZone_onProtectionZoneShooting
+    0x1A (26): stepRepair_onAction
+    0x1B (27): destructibleEntity_showShotResults
+    0x1C (28): destructibleEntity_onDamaged
+    0x1D (29): destructibleEntity_onDestroyed
+    0x1E (30): destructibleEntity_onDefended
+    0x1F (31): defenderBonus_onOwnSectorCaptured
+    0x20 (32): defenderBonus_onOwnDestructibleDestroyed
+    0x21 (33): defenderBonus_onPlayerGroupChanged
+    0x22 (34): recoveryMechanic_onActivate
+    0x23 (35): recoveryMechanic_onDeactivate
+    0x24 (36): recoveryMechanic_startRecovering
+    0x25 (37): recoveryMechanic_stopRecovering
+    0x26 (38): respawnController_respawnScheduled
+    0x27 (39): respawnController_stopRespawn
+    0x28 (40): respawnController_suspendRespawn
+    0x29 (41): respawnController_respawn
+    0x2A (42): smokeController_onEnterSmoke
+    0x2B (43): smokeController_onLeaveSmoke
+    0x2C (44): updatePrebattleID
+    0x2D (45): moveWith
+    0x2E (46): trackWorldPointWithGun
+    0x2F (47): trackRelativePointWithGun
+    0x30 (48): stopTrackingWithGun
+    0x31 (49): trackVehicleWithGun
+    0x32 (50): changeSetting
+    0x33 (51): sendVisibilityDevelopmentInfo
+    0x34 (52): shoot
+    0x35 (53): teleportTo
+    0x36 (54): replenishAmmo
+    0x37 (55): setDevelopmentFeature
+    0x38 (56): receiveFakeShot
+    0x39 (57): setAvatar
+    0x3A (58): registerObserver
+    0x3B (59): onClientConnected
+    0x3C (60): onBattleRunning
+    0x3D (61): sendStateToOwnClient
+    0x3E (62): onEnemyVehicleShot
+    0x3F (63): scheduleExtraCheck
+    0x40 (64): onObservedByEnemy
+    0x41 (65): onDetectedByEnemy
+    0x42 (66): onConcealedFromEnemy
+    0x43 (67): updateVehicleAmmo
+    0x44 (68): onFlagAction
+    0x45 (69): receiveAssistsFromArena
+    0x46 (70): receiveFirstDetectionFromArena
+    0x47 (71): requestDamagedDevicesFromFor
+    0x48 (72): sendDamagedDevicesTo
+    0x49 (73): setHonorTitle
+    0x4A (74): receiveTaggedDestructibleKill
+    0x4B (75): setOnFireByExplosion
+    0x4C (76): onReceiveSpatialData
+    0x4D (77): onResourceAbsorbed
+    0x4E (78): setInsideResourcePoint
+    0x4F (79): grantWinPoints
+    0x50 (80): pauseMechanics
+    0x51 (81): startOrUpdateExtraFromOutside
+    0x52 (82): damageByEquipment
+    0x53 (83): updateOwnClientRTT
+    0x54 (84): receiveVisibilityUpdate
+    0x55 (85): requestVisibilityLists
+    0x56 (86): switchSetup
+    0x57 (87): setEquipmentApplicationPoint
+  Base Methods:
+    0x00 (0): onCreateCellSuccess
+    0x01 (1): setAvatar
+    0x02 (2): smartDestroy
+    0x03 (3): logAimMetrics
+
+Entity ID: 6 (AreaDestructibles)
+  Properties:
+    0x00 (0): chunkID
+    0x01 (1): arenaTypeID
+    0x02 (2): arenaBonusType
+    0x03 (3): destroyedModules
+    0x04 (4): destroyedFragiles
+    0x05 (5): fallenColumns
+    0x06 (6): fallenTrees
+    0x07 (7): destructibles
+    0x08 (8): waters
+    0x09 (9): resetCount
+    0x0A (10): arenaBase
+    0x0B (11): arenaGeometryID
+    0x0C (12): cp
+    0x0D (13): arena
+  Cell Methods:
+    0x00 (0): artilleryController_addArtilleryPreparation
+    0x01 (1): artilleryController_addArtillery
+    0x02 (2): bomberController_addBomber
+    0x03 (3): projectileController_takeOverProjectile
+    0x04 (4): reset
+    0x05 (5): damageDestructible
+    0x06 (6): receiveTaggedDestructibleKill
+  Base Methods:
+    0x00 (0): createCellNearHere
+    0x01 (1): smartDestroy
+
+Entity ID: 7 (OfflineEntity)
+
+Entity ID: 8 (Flock)
+  Properties:
+    0x00 (0): modelName
+    0x01 (1): modelName2
+    0x02 (2): modelCount
+    0x03 (3): yawSpeed
+    0x04 (4): pitchSpeed
+    0x05 (5): rollSpeed
+    0x06 (6): animSpeedMin
+    0x07 (7): animSpeedMax
+    0x08 (8): height
+    0x09 (9): radius
+    0x0A (10): deadZoneRadius
+    0x0B (11): speedAtBottom
+    0x0C (12): speedAtTop
+    0x0D (13): decisionTime
+    0x0E (14): flyAroundCenter
+
+Entity ID: 9 (FlockExotic)
+  Properties:
+    0x00 (0): animSpeedMax
+    0x01 (1): animSpeedMin
+    0x02 (2): modelCount
+    0x03 (3): modelName
+    0x04 (4): modelName2
+    0x05 (5): speed
+    0x06 (6): initSpeedRandom
+    0x07 (7): speedRandom
+    0x08 (8): accelerationTime
+    0x09 (9): triggerRadius
+    0x0A (10): explosionRadius
+    0x0B (11): spawnRadius
+    0x0C (12): spawnHeight
+    0x0D (13): flightRadius
+    0x0E (14): flightHeight
+    0x0F (15): flightAngleMin
+    0x10 (16): flightAngleMax
+    0x11 (17): flightOffsetFromOrigin
+    0x12 (18): lifeTime
+    0x13 (19): respawnTime
+    0x14 (20): flightSound
+
+Entity ID: 10 (Login)
+  Client Methods:
+    0x00 (0): onKickedFromServer
+    0x01 (1): receiveLoginQueueNumber
+    0x02 (2): setPeripheryRoutingGroup
+  Properties:
+    0x00 (0): accountDBID_s
+    0x01 (1): loginPriority
+  Base Methods:
+    0x00 (0): onEnqueued
+    0x01 (1): onQueueTurn
+    0x02 (2): onAccountClientReleased
+
+Entity ID: 11 (DetachedTurret)
+  Client Methods:
+    0x00 (0): onStaticCollision
+    0x01 (1): showDamageFromShot
+  Properties:
+    0x00 (0): cp
+    0x01 (1): arenaTypeID
+    0x02 (2): velocity
+    0x03 (3): arenaBase
+    0x04 (4): angularVelocity
+    0x05 (5): vehicleCompDescr
+    0x06 (6): outfitCD
+    0x07 (7): isUnderWater
+    0x08 (8): isCollidingWithWorld
+    0x09 (9): vehicleID
+    0x0A (10): attackerInfo
+    0x0B (11): vehicleInfo
+    0x0C (12): isAtackerProxy
+  Cell Methods:
+    0x00 (0): receiveShot
+    0x01 (1): receiveExplosion
+    0x02 (2): applyForceToCOM
+    0x03 (3): onDamageVehicle
+
+Entity ID: 12 (BootcampAccount)
+  Client Methods:
+    0x00 (0): finishBootcamp
+    0x01 (1): onBootcampEnqueued
+  Properties:
+    0x00 (0): markForDelete
+  Base Methods:
+    0x00 (0): completeBootcampLesson
+    0x01 (1): saveBootcampCheckpoint
+    0x02 (2): changeBootcampLessonBonus
+    0x03 (3): requestBootcampQuit
+    0x04 (4): onBootcampEnqueued
+    0x05 (5): setParent
+    0x06 (6): resetBootcamp
+    0x07 (7): setToken
+    0x08 (8): addQuestToken
+
+Entity ID: 13 (DebugDrawEntity)
+  Properties:
+    0x00 (0): drawObjects
+  Cell Methods:
+    0x00 (0): remove
+    0x01 (1): clear
+    0x02 (2): drawLine
+    0x03 (3): drawLines
+    0x04 (4): drawPath
+    0x05 (5): drawCube
+    0x06 (6): drawCubes
+    0x07 (7): drawSphere
+    0x08 (8): drawSpheres
+    0x09 (9): write3DText
+    0x0A (10): setLifeTime
+    0x0B (11): destroyEntity
+
+Entity ID: 14 (ClientSelectableCameraObject)
+
+Entity ID: 15 (ClientSelectableCameraVehicle)
+  Properties:
+    0x00 (0): modelName
+
+Entity ID: 16 (ClientSelectableWebLinksOpener)
+  Properties:
+    0x00 (0): url
+
+Entity ID: 17 (ClientSelectableEasterEgg)
+  Properties:
+    0x00 (0): imageName
+    0x01 (1): multiLanguageSupport
+    0x02 (2): outlineModelName
+    0x03 (3): animationSequence
+
+Entity ID: 18 (EmptyEntity)
+
+Entity ID: 19 (HeroTank)
+  Properties:
+    0x00 (0): markerHeightFactor
+    0x01 (1): vehicleTurretYaw
+    0x02 (2): vehicleGunPitch
+
+Entity ID: 20 (PlatoonTank)
+  Properties:
+    0x00 (0): markerHeightFactor
+    0x01 (1): vehicleTurretYaw
+    0x02 (2): vehicleGunPitch
+    0x03 (3): slotIndex
+
+Entity ID: 21 (PlatoonLighting)
+  Properties:
+    0x00 (0): animationStateMachine
+
+Entity ID: 22 (SectorBase)
+  Properties:
+    0x00 (0): arenaBase
+    0x01 (1): arena
+    0x02 (2): radius
+    0x03 (3): isActive
+    0x04 (4): cp
+    0x05 (5): pointsPerSecond
+    0x06 (6): maxPointsPerSecond
+    0x07 (7): ownerStopsCapturing
+    0x08 (8): defaultPointsPerSecond
+    0x09 (9): defaultMaxPointsPerSecond
+    0x0A (10): isActive
+    0x0B (11): team
+    0x0C (12): baseID
+    0x0D (13): sectorID
+    0x0E (14): maxPoints
+    0x0F (15): initMaxPoints
+    0x10 (16): pointsPercentage
+    0x11 (17): capturingStopped
+    0x12 (18): onDamageCooldownTime
+    0x13 (19): radius
+    0x14 (20): isCaptured
+    0x15 (21): invadersCount
+    0x16 (22): hasExtraInvader
+    0x17 (23): expectedCaptureTime
+  Cell Methods:
+    0x00 (0): start
+    0x01 (1): stop
+    0x02 (2): setMaxPointsFactor
+    0x03 (3): reset
+  Base Methods:
+    0x00 (0): smartDestroy
+
+Entity ID: 23 (Sector)
+  Client Methods:
+    0x00 (0): showBomb
+  Properties:
+    0x00 (0): arena
+    0x01 (1): arenaBase
+    0x02 (2): arenaTypeID
+    0x03 (3): groupID
+    0x04 (4): sectorID
+    0x05 (5): playerGroup
+    0x06 (6): IDInPlayerGroup
+    0x07 (7): lengthX
+    0x08 (8): lengthZ
+    0x09 (9): team
+    0x0A (10): state
+    0x0B (11): initialState
+    0x0C (12): transitionTime
+    0x0D (13): endOfTransitionPeriod
+    0x0E (14): mainDirection
+    0x0F (15): isActive
+    0x10 (16): cp
+    0x11 (17): isLast
+  Cell Methods:
+    0x00 (0): start
+    0x01 (1): reset
+    0x02 (2): open
+    0x03 (3): transition
+    0x04 (4): stop
+    0x05 (5): harm_receiveAttackResults
+  Base Methods:
+    0x00 (0): smartDestroy
+
+Entity ID: 24 (DestructibleEntity)
+  Client Methods:
+    0x00 (0): onHealthChanged
+    0x01 (1): showDamageFromShot
+    0x02 (2): showDamageFromExplosion
+  Properties:
+    0x00 (0): arena
+    0x01 (1): arenaBase
+    0x02 (2): isActive
+    0x03 (3): team
+    0x04 (4): destructibleEntityID
+    0x05 (5): health
+    0x06 (6): maxHealth
+    0x07 (7): isDestructibleDestroyed
+    0x08 (8): udoTypeID
+    0x09 (9): typeID
+    0x0A (10): initActive
+    0x0B (11): linkedMapActivities
+    0x0C (12): damageStickers
+    0x0D (13): explosionDamageFactor
+    0x0E (14): cp
+  Cell Methods:
+    0x00 (0): receiveAndTakeOverProjectile
+    0x01 (1): receiveExplosion
+    0x02 (2): receiveRamming
+    0x03 (3): start
+    0x04 (4): stop
+    0x05 (5): reset
+    0x06 (6): onEnemyVehicleShot
+    0x07 (7): scheduleExtraCheck
+  Base Methods:
+    0x00 (0): smartDestroy
+
+Entity ID: 25 (StepRepairPoint)
+  Properties:
+    0x00 (0): initTeam
+    0x01 (1): team
+    0x02 (2): pointsPerStep
+    0x03 (3): repairTime
+    0x04 (4): secondsCooldownPerStep
+    0x05 (5): baseSecondsCooldownAfterRepair
+    0x06 (6): percentageShellsPerStep
+    0x07 (7): radius
+    0x08 (8): healGroup
+  Cell Methods:
+    0x00 (0): changeOwnerTeam
+    0x01 (1): setCooldownAfterRepair
+
+Entity ID: 26 (ProtectionZone)
+  Properties:
+    0x00 (0): arena
+    0x01 (1): arenaBase
+    0x02 (2): zoneID
+    0x03 (3): lengthX
+    0x04 (4): lengthZ
+    0x05 (5): team
+    0x06 (6): maxStayTime
+    0x07 (7): numberOfTurrets
+    0x08 (8): minTurretShootInterval
+    0x09 (9): minShootingTime
+    0x0A (10): shotDuration
+    0x0B (11): shotRadius
+    0x0C (12): shotShellNation
+    0x0D (13): shotShellName
+    0x0E (14): shotPiercingPower
+    0x0F (15): mainDirection
+    0x10 (16): isActive
+    0x11 (17): cp
+  Cell Methods:
+    0x00 (0): start
+    0x01 (1): reset
+    0x02 (2): stop
+    0x03 (3): harm_receiveAttackResults
+  Base Methods:
+    0x00 (0): smartDestroy
+
+Entity ID: 27 (HangarPoster)
+  Properties:
+    0x00 (0): minAlpha
+    0x01 (1): maxAlphaDistance
+
+Entity ID: 28 (TeamInfo)
+  Client Methods:
+    0x00 (0): onCombatEquipmentUsed
+  Properties:
+    0x00 (0): throttleFilterHardThresholdCell
+    0x01 (1): throttleFilterHardThresholdBase
+    0x02 (2): teamID
+
+Entity ID: 29 (AreaOfEffect)
+  Client Methods:
+    0x00 (0): playEffect
+  Properties:
+    0x00 (0): arenaID
+    0x01 (1): vehicleID
+    0x02 (2): equipmentID
+    0x03 (3): launchTime
+    0x04 (4): strikeTime
+
+Entity ID: 30 (AttackBomber)
+
+Entity ID: 31 (AttackArtilleryFort)
+  Properties:
+    0x00 (0): team
+
+Entity ID: 32 (PersonalDeathZone)
+
+Entity ID: 33 (ClientSelectableRankedObject)
+
+Entity ID: 34 (ClientSelectableHangarsSwitcher)
+  Properties:
+    0x00 (0): destHangar
+
+Entity ID: 35 (StaticDeathZone)
+  Client Methods:
+    0x00 (0): onDeathZoneDamage
+    0x01 (1): onDeathZoneNotification
+    0x02 (2): onEntityEnteredInZone
+    0x03 (3): onEntityLeftZone
+  Properties:
+    0x00 (0): zoneId
+    0x01 (1): isActive
+    0x02 (2): deathzone_size
+    0x03 (3): vehiclesUnderFire
+
+Entity ID: 36 (BasicMine)
+  Properties:
+    0x00 (0): equipmentID
+    0x01 (1): ownerVehicleID
+    0x02 (2): isDetonated
+    0x03 (3): isActivated
+    0x04 (4): activationTimeDelay
+    0x05 (5): mineNumber
+    0x06 (6): isMarkerEnabled
+
+Entity ID: 37 (ApplicationPoint)
+  Properties:
+    0x00 (0): vehicleID
+    0x01 (1): equipmentID
+    0x02 (2): launchTime
+    0x03 (3): level
+
+Entity ID: 38 (ApplicationPointWithProximity)
+
+Entity ID: 39 (NetworkEntity)
+  Client Methods:
+    0x00 (0): activateGameObject
+    0x01 (1): activateGameObjectUnique
+    0x02 (2): deactivateGameObject
+    0x03 (3): deactivateGameObjectUnique
+    0x04 (4): createGameObject
+    0x05 (5): removeGameObject
+    0x06 (6): removeGameObjectUnique
+  Properties:
+    0x00 (0): unique_id
+    0x01 (1): prefab_path
+    0x02 (2): scale
+    0x03 (3): goState
+    0x04 (4): useDetailedPosition
+

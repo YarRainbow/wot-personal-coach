@@ -1,0 +1,21 @@
+# Generated Artifacts
+ids_*.json
+joined_entities*.xml
+message_map*.txt
+
+# Legacy/Old artifacts
+ids.json
+joined_entities.xml
+message_map.txt
+
+# Rust
+target/
+**/*.rs.bk
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/

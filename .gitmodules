@@ -1,0 +1,3 @@
+[submodule "modules/WorldOfTanks-Decompiled"]
+	path = modules/WorldOfTanks-Decompiled
+	url = git@github.com:StranikS-Scan/WorldOfTanks-Decompiled.git

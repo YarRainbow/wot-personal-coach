@@ -1,0 +1,26 @@
+{
+    "packetTypes": {
+        "0x03": "EntityEnter",
+        "0x05": "EntityLeave",
+        "0x07": {
+            "name": "EntityPropertyUpdate",
+            "subtypes": {
+                "0x05": "Health Update",
+                "0x07": "Track Destroyed"
+            }
+        },
+        "0x08": {
+            "name": "EntityMethodCall",
+            "subtypes": {
+                "0x01": "Damage Argument",
+                "0x05": "Shot/Hit",
+                "0x0B": "Module Damage",
+                "0x11": "Tracer",
+                "0x17": "Tracked?"
+            }
+        },
+        "0x0A": "EntityMove (Position/Rotation)",
+        "0x20": "EntityTracked",
+        "0x23": "Chat Message"
+    }
+}

@@ -1,0 +1,1049 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Entities>
+  <Entity id="0" name="Account">
+    <ClientMethods />
+    <Properties />
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="1" name="Avatar">
+    <ClientMethods>
+      <Method id="0" name="onChatAction" />
+      <Method id="1" name="messenger_onActionByServer_chat2" />
+      <Method id="2" name="onCmdResponse" />
+      <Method id="3" name="onCmdResponseExt" />
+      <Method id="4" name="processInvitations" />
+      <Method id="5" name="onTokenReceived" />
+      <Method id="6" name="updateTeamsHealthPercentage" />
+      <Method id="7" name="notifyCannotStartRecovering" />
+      <Method id="8" name="notifyCancelled" />
+      <Method id="9" name="updateState" />
+      <Method id="10" name="redrawVehicleOnRespawn" />
+      <Method id="11" name="explodeVehicleBeforeRespawn" />
+      <Method id="12" name="updateRespawnVehicles" />
+      <Method id="13" name="updateRespawnCooldowns" />
+      <Method id="14" name="updateRespawnInfo" />
+      <Method id="15" name="updateVehicleLimits" />
+      <Method id="16" name="updatePlayerLives" />
+      <Method id="17" name="onTeamLivesRestored" />
+      <Method id="18" name="updateSpawnList" />
+      <Method id="19" name="removeVehicle" />
+      <Method id="20" name="onVehicleHealthChanged" />
+      <Method id="21" name="externalTrigger" />
+      <Method id="22" name="welcomeToSector" />
+      <Method id="23" name="onStepRepairPointAction" />
+      <Method id="24" name="onSectorBaseAction" />
+      <Method id="25" name="enteringProtectionZone" />
+      <Method id="26" name="leavingProtectionZone" />
+      <Method id="27" name="protectionZoneShooting" />
+      <Method id="28" name="onSectorShooting" />
+      <Method id="29" name="onXPUpdated" />
+      <Method id="30" name="onCrewRoleFactorAndRankUpdate" />
+      <Method id="31" name="onRankUpdate" />
+      <Method id="32" name="showDestructibleShotResults" />
+      <Method id="33" name="onDestructibleDestroyed" />
+      <Method id="34" name="update" />
+      <Method id="35" name="onKickedFromServer" />
+      <Method id="36" name="onIGRTypeChanged" />
+      <Method id="37" name="onAutoAimVehicleLost" />
+      <Method id="38" name="receiveAccountStats" />
+      <Method id="39" name="updateVehicleHealth" />
+      <Method id="40" name="updateVehicleAmmo" />
+      <Method id="41" name="onSwitchViewpoint" />
+      <Method id="42" name="onBootcampEvent" />
+      <Method id="43" name="updateVehicleSetting" />
+      <Method id="44" name="updateTargetingInfo" />
+      <Method id="45" name="updateTargetVehicleID" />
+      <Method id="46" name="showOwnVehicleHitDirection" />
+      <Method id="47" name="showOtherVehicleDamagedDevices" />
+      <Method id="48" name="showShotResults" />
+      <Method id="49" name="showDevelopmentInfo" />
+      <Method id="50" name="showHittingArea" />
+      <Method id="51" name="showCarpetBombing" />
+      <Method id="52" name="showTracer" />
+      <Method id="53" name="stopTracer" />
+      <Method id="54" name="explodeProjectile" />
+      <Method id="55" name="onRoundFinished" />
+      <Method id="56" name="onKickedFromArena" />
+      <Method id="57" name="onBattleEvents" />
+      <Method id="58" name="battleEventsSummary" />
+      <Method id="59" name="updateArena" />
+      <Method id="60" name="updatePositions" />
+      <Method id="61" name="receivePhysicsDebugInfo" />
+      <Method id="62" name="updateCarriedFlagPositions" />
+      <Method id="63" name="receiveNotification" />
+      <Method id="64" name="onRepairPointAction" />
+      <Method id="65" name="updateAvatarPrivateStats" />
+      <Method id="66" name="updateResourceAmount" />
+      <Method id="67" name="onFrictionWithVehicle" />
+      <Method id="68" name="onCollisionWithVehicle" />
+      <Method id="69" name="onSmoke" />
+      <Method id="70" name="onCombatEquipmentShotLaunched" />
+      <Method id="71" name="updateQuestProgress" />
+      <Method id="72" name="updateVehicleQuickShellChanger" />
+      <Method id="73" name="enemySPGHit" />
+      <Method id="74" name="enemySPGShotSound" />
+      <Method id="75" name="handleScriptEventFromServer" />
+      <Method id="76" name="setUpdatedGoodiesSnapshot" />
+    </ClientMethods>
+    <Properties>
+      <Property id="0" name="remoteCamera" />
+      <Property id="1" name="isObserverFPV" />
+      <Property id="2" name="numOfObservers" />
+      <Property id="3" name="abTestFeatures" />
+      <Property id="4" name="state" />
+      <Property id="5" name="name" />
+      <Property id="6" name="sessionID" />
+      <Property id="7" name="account" />
+      <Property id="8" name="playerVehicle" />
+      <Property id="9" name="arena" />
+      <Property id="10" name="arenaVehiclesIDs" />
+      <Property id="11" name="accountStartedAt" />
+      <Property id="12" name="accountSessionID" />
+      <Property id="13" name="arenaUniqueID" />
+      <Property id="14" name="syncData" />
+      <Property id="15" name="arenaTypeID" />
+      <Property id="16" name="accountDBID" />
+      <Property id="17" name="arenaBonusType" />
+      <Property id="18" name="arenaGuiType" />
+      <Property id="19" name="arenaExtraData" />
+      <Property id="20" name="weatherPresetID" />
+      <Property id="21" name="denunciationsLeft" />
+      <Property id="22" name="clientCtx" />
+      <Property id="23" name="tkillIsSuspected" />
+      <Property id="24" name="arenaBase" />
+      <Property id="25" name="team" />
+      <Property id="26" name="playerVehicleBase" />
+      <Property id="27" name="playerVehicleID" />
+      <Property id="28" name="playerVehicleTypeCompDescr" />
+      <Property id="29" name="isObserverBothTeams" />
+      <Property id="30" name="observableTeamID" />
+      <Property id="31" name="isGunLocked" />
+      <Property id="32" name="ownVehicleGear" />
+      <Property id="33" name="ownVehicleAuxPhysicsData" />
+      <Property id="34" name="ammo" />
+      <Property id="35" name="ammoViews" />
+      <Property id="36" name="cp" />
+      <Property id="37" name="historyLoggingFlags" />
+      <Property id="38" name="heatmapLoggingFlags" />
+      <Property id="39" name="gameParamsRev" />
+      <Property id="40" name="accountDBIDOnCell" />
+      <Property id="41" name="arenaUniqueIDOnCell" />
+      <Property id="42" name="arenaTypeIDOnCell" />
+      <Property id="43" name="arenaBonusTypeOnCell" />
+      <Property id="44" name="orderingRoster" />
+      <Property id="45" name="viewpoints" />
+      <Property id="46" name="customizationDisplayType" />
+      <Property id="47" name="inBattleQuestNames" />
+      <Property id="48" name="inBattleQuestProgresses" />
+      <Property id="49" name="playLimits" />
+      <Property id="50" name="arenaGameParamRev" />
+      <Property id="51" name="goodiesSnapshot" />
+    </Properties>
+    <CellMethods>
+      <Method id="0" name="switchObserverFPV" />
+      <Method id="1" name="setRemoteCamera" />
+      <Method id="2" name="setNumOfObservers" />
+      <Method id="3" name="onXPUpdated" />
+      <Method id="4" name="autoAim" />
+      <Method id="5" name="moveTo" />
+      <Method id="6" name="bindToVehicle" />
+      <Method id="7" name="monitorVehicleDamagedDevices" />
+      <Method id="8" name="onOwnVehicleStatusChanged" />
+      <Method id="9" name="allowUnbindingFromVehicle" />
+      <Method id="10" name="forbidUnbindingFromVehicle" />
+      <Method id="11" name="discloseEntities" />
+      <Method id="12" name="receiveVisibilityUpdate" />
+      <Method id="13" name="receiveVisibilityLists" />
+      <Method id="14" name="receiveVehicleDamagedDevices" />
+      <Method id="15" name="lockGunOnClient" />
+      <Method id="16" name="showShotResults" />
+      <Method id="17" name="explodeProjectile" />
+      <Method id="18" name="refreshVehicle" />
+      <Method id="19" name="activateEquipment" />
+      <Method id="20" name="setEquipmentApplicationPoint" />
+      <Method id="21" name="switchViewPointOrBindToVehicle" />
+      <Method id="22" name="grantRagePoints" />
+      <Method id="23" name="harm_receiveAttackResults" />
+      <Method id="24" name="pauseMechanics" />
+      <Method id="25" name="updateOwnVehicleAuxPhysicsDataAndGear" />
+      <Method id="26" name="sendAmmoStatusToClient" />
+      <Method id="27" name="setDualGunCharger" />
+      <Method id="28" name="reportClientStats" />
+      <Method id="29" name="onRankUpdated" />
+      <Method id="30" name="vehicle_moveWith" />
+      <Method id="31" name="vehicle_shoot" />
+      <Method id="32" name="vehicle_trackWorldPointWithGun" />
+      <Method id="33" name="vehicle_trackRelativePointWithGun" />
+      <Method id="34" name="vehicle_stopTrackingWithGun" />
+      <Method id="35" name="vehicle_changeSetting" />
+      <Method id="36" name="setServerMarker" />
+      <Method id="37" name="logLag" />
+    </CellMethods>
+    <BaseMethods>
+      <Method id="0" name="joinChatChannel" />
+      <Method id="1" name="leaveChatChannel" />
+      <Method id="2" name="onChatAction" />
+      <Method id="3" name="onUserChatChannelCreated" />
+      <Method id="4" name="chatCommandFromClient" />
+      <Method id="5" name="chatCommand" />
+      <Method id="6" name="inviteCommand" />
+      <Method id="7" name="ackCommand" />
+      <Method id="8" name="keepAlive" />
+      <Method id="9" name="keepAlive" />
+      <Method id="10" name="onStreamComplete" />
+      <Method id="11" name="setState" />
+      <Method id="12" name="setCollectOnlyMode" />
+      <Method id="13" name="setBattleChannels" />
+      <Method id="14" name="changeMemberStatus" />
+      <Method id="15" name="setWorkingState" />
+      <Method id="16" name="streamStringToClient" />
+      <Method id="17" name="messenger_onActionByServer_chat2" />
+      <Method id="18" name="messenger_onActionByClient_chat2" />
+      <Method id="19" name="messenger_onActionForClient_chat2" />
+      <Method id="20" name="doCmdStr" />
+      <Method id="21" name="doCmdInt" />
+      <Method id="22" name="doCmdInt2" />
+      <Method id="23" name="doCmdInt3" />
+      <Method id="24" name="doCmdInt4" />
+      <Method id="25" name="doCmdInt2Str" />
+      <Method id="26" name="doCmdInt3Str" />
+      <Method id="27" name="doCmdIntArr" />
+      <Method id="28" name="doCmdIntStr" />
+      <Method id="29" name="doCmdIntStrArr" />
+      <Method id="30" name="doCmdIntArrStrArr" />
+      <Method id="31" name="doCmdStrArr" />
+      <Method id="32" name="avatarClientProxy_showShotResults" />
+      <Method id="33" name="avatarClientProxy_showDevelopmentInfo" />
+      <Method id="34" name="avatarClientProxy_onXPUpdated" />
+      <Method id="35" name="avatarClientProxy_updateQuestProgress" />
+      <Method id="36" name="avatarClientProxy_showHittingArea" />
+      <Method id="37" name="avatarClientProxy_showCarpetBombing" />
+      <Method id="38" name="avatarClientProxy_onRankUpdate" />
+      <Method id="39" name="avatarClientProxy_onCombatEquipmentShotLaunched" />
+      <Method id="40" name="avatarClientProxy_updateQuestProgress" />
+      <Method id="41" name="teamHealthBar_updateTeamsHealthPercentage" />
+      <Method id="42" name="protectionZone_enteringProtectionZone" />
+      <Method id="43" name="protectionZone_leavingProtectionZone" />
+      <Method id="44" name="protectionZone_protectionZoneShooting" />
+      <Method id="45" name="recoveryMechanic_notifyCannotStartRecovering" />
+      <Method id="46" name="recoveryMechanic_notifyCancelled" />
+      <Method id="47" name="recoveryMechanic_updateState" />
+      <Method id="48" name="destructibleEntity_onDestroyed" />
+      <Method id="49" name="respawnController_requestRespawnGroupChange" />
+      <Method id="50" name="respawnController_chooseVehicleForRespawn" />
+      <Method id="51" name="respawnController_performRespawn" />
+      <Method id="52" name="respawnController_redrawVehicleOnRespawn" />
+      <Method id="53" name="respawnController_updateRespawnVehicles" />
+      <Method id="54" name="respawnController_updateRespawnCooldowns" />
+      <Method id="55" name="respawnController_updateRespawnInfo" />
+      <Method id="56" name="respawnController_updateVehicleLimits" />
+      <Method id="57" name="respawnController_onTeamLivesRestored" />
+      <Method id="58" name="respawnController_updatePlayerLives" />
+      <Method id="59" name="respawnController_chooseRespawnZone" />
+      <Method id="60" name="respawnController_switchSetup" />
+      <Method id="61" name="vehiclesSpawnListStorage_updateSpawnList" />
+      <Method id="62" name="enableFrontLineDevInfo" />
+      <Method id="63" name="onXPUpdated" />
+      <Method id="64" name="onCreateCellSuccess" />
+      <Method id="65" name="logLag" />
+      <Method id="66" name="kickSelf" />
+      <Method id="67" name="setClientReady" />
+      <Method id="68" name="leaveArena" />
+      <Method id="69" name="unlockUnusedVehicles" />
+      <Method id="70" name="confirmBattleResultsReceiving" />
+      <Method id="71" name="makeDenunciation" />
+      <Method id="72" name="banUnbanUser" />
+      <Method id="73" name="requestToken" />
+      <Method id="74" name="banForTKill" />
+      <Method id="75" name="sendAccountStats" />
+      <Method id="76" name="setClientCtx" />
+      <Method id="77" name="updateArena" />
+      <Method id="78" name="updateArenaVehicleListAddedUpdated" />
+      <Method id="79" name="vehicle_teleport" />
+      <Method id="80" name="vehicle_replenishAmmo" />
+      <Method id="81" name="onRemovedFromArena" />
+      <Method id="82" name="onKickedFromArena" />
+      <Method id="83" name="onRoundStarted" />
+      <Method id="84" name="onRoundFinished" />
+      <Method id="85" name="leaveDisconnected" />
+      <Method id="86" name="setDevelopmentFeature" />
+      <Method id="87" name="addBotToArena" />
+      <Method id="88" name="receiveFakeShot" />
+      <Method id="89" name="logStreamCorruption" />
+      <Method id="90" name="logMemoryCriticalEvent" />
+      <Method id="91" name="releaseClientForLogin" />
+      <Method id="92" name="onBattleResultsAvailable" />
+      <Method id="93" name="smartDestroy" />
+      <Method id="94" name="stopByFailure" />
+      <Method id="95" name="setAvatarClient" />
+      <Method id="96" name="leaveArenaByAccount" />
+      <Method id="97" name="addSyncData" />
+      <Method id="98" name="removeSyncData" />
+      <Method id="99" name="updateGoodiesSnapshot" />
+    </BaseMethods>
+  </Entity>
+  <Entity id="2" name="ArenaInfo">
+    <ClientMethods>
+      <Method id="0" name="showCarpetBombing" />
+    </ClientMethods>
+    <Properties>
+      <Property id="0" name="vehiclesAreaMarkerParams" />
+      <Property id="1" name="planeTrajectory" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="3" name="ClientSelectableObject">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="modelName" />
+      <Property id="1" name="selectionId" />
+      <Property id="2" name="mouseOverSoundName" />
+      <Property id="3" name="isOver3DSound" />
+      <Property id="4" name="clickSoundName" />
+      <Property id="5" name="isClick3DSound" />
+      <Property id="6" name="edgeMode" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="4" name="HangarVehicle">
+    <ClientMethods />
+    <Properties />
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="5" name="Vehicle">
+    <ClientMethods>
+      <Method id="0" name="onVehiclePickup" />
+      <Method id="1" name="onExtraHitted" />
+      <Method id="2" name="onHealthChanged" />
+      <Method id="3" name="showShooting" />
+      <Method id="4" name="updateLaserSight" />
+      <Method id="5" name="showDamageFromShot" />
+      <Method id="6" name="showDamageFromExplosion" />
+      <Method id="7" name="showAmmoBayEffect" />
+      <Method id="8" name="onPushed" />
+      <Method id="9" name="onStaticCollision" />
+      <Method id="10" name="showRammingEffect" />
+    </ClientMethods>
+    <Properties>
+      <Property id="0" name="remoteCamera" />
+      <Property id="1" name="steeringAngles" />
+      <Property id="2" name="wheelsScroll" />
+      <Property id="3" name="wheelsState" />
+      <Property id="4" name="burnoutLevel" />
+      <Property id="5" name="perkEffects" />
+      <Property id="6" name="perks" />
+      <Property id="7" name="perksRibbonNotify" />
+      <Property id="8" name="isStrafing" />
+      <Property id="9" name="postmortemViewPointName" />
+      <Property id="10" name="isHidden" />
+      <Property id="11" name="physicsMode" />
+      <Property id="12" name="siegeState" />
+      <Property id="13" name="gunAnglesPacked" />
+      <Property id="14" name="publicInfo" />
+      <Property id="15" name="health" />
+      <Property id="16" name="isCrewActive" />
+      <Property id="17" name="engineMode" />
+      <Property id="18" name="damageStickers" />
+      <Property id="19" name="publicStateModifiers" />
+      <Property id="20" name="compDescr" />
+      <Property id="21" name="stunInfo" />
+      <Property id="22" name="status" />
+      <Property id="23" name="invisibility" />
+      <Property id="24" name="radioDistance" />
+      <Property id="25" name="circularVisionRadius" />
+      <Property id="26" name="detectedVehicles" />
+      <Property id="27" name="isObservedByEnemy" />
+      <Property id="28" name="sixthSenseState" />
+      <Property id="29" name="rammingBonus" />
+      <Property id="30" name="componentsData" />
+      <Property id="31" name="ammo" />
+      <Property id="32" name="crewCompactDescrs" />
+      <Property id="33" name="enhancements" />
+      <Property id="34" name="setups" />
+      <Property id="35" name="setupsIndexes" />
+      <Property id="36" name="customRoleSlotTypeId" />
+      <Property id="37" name="vehPerks" />
+      <Property id="38" name="vehPostProgression" />
+      <Property id="39" name="disabledSwitches" />
+      <Property id="40" name="isClientConnected" />
+      <Property id="41" name="avatar" />
+      <Property id="42" name="avatarID" />
+      <Property id="43" name="arenaBase" />
+      <Property id="44" name="botKind" />
+      <Property id="45" name="eventBotKind" />
+      <Property id="46" name="respawnOffset" />
+      <Property id="47" name="xRayFactor" />
+      <Property id="48" name="foliageInvisibilityFactor" />
+      <Property id="49" name="masterVehID" />
+      <Property id="50" name="needsCount" />
+      <Property id="51" name="arenaTypeID" />
+      <Property id="52" name="arenaBonusType" />
+      <Property id="53" name="tkillRating" />
+      <Property id="54" name="cp" />
+      <Property id="55" name="arenaUniqueID" />
+      <Property id="56" name="accountDBID" />
+      <Property id="57" name="historyLoggingFlags" />
+      <Property id="58" name="heatmapLoggingFlags" />
+      <Property id="59" name="state" />
+      <Property id="60" name="arena" />
+      <Property id="61" name="inspiringEffect" />
+      <Property id="62" name="healingEffect" />
+      <Property id="63" name="dotEffect" />
+      <Property id="64" name="inspired" />
+      <Property id="65" name="healing" />
+      <Property id="66" name="healOverTime" />
+      <Property id="67" name="debuff" />
+      <Property id="68" name="isSpeedCapturing" />
+      <Property id="69" name="isBlockingCapture" />
+      <Property id="70" name="dogTag" />
+      <Property id="71" name="isMyVehicle" />
+      <Property id="72" name="quickShellChangerFactor" />
+      <Property id="73" name="onRespawnReloadTimeFactor" />
+      <Property id="74" name="ownVehiclePosition" />
+      <Property id="75" name="enableExternalRespawn" />
+      <Property id="76" name="botDisplayStatus" />
+      <Property id="77" name="thermalVisionFinishTime" />
+    </Properties>
+    <CellMethods>
+      <Method id="0" name="teamBase_receivePoints" />
+      <Method id="1" name="teamBase_onCaptured" />
+      <Method id="2" name="sectorBase_receivePoints" />
+      <Method id="3" name="sectorBase_onCaptured" />
+      <Method id="4" name="sectorBase_onAction" />
+      <Method id="5" name="sectorBase_onCapturePointsBlocked" />
+      <Method id="6" name="sectorBase_onCapturePointsBlockedComplete" />
+      <Method id="7" name="repairBase_onAction" />
+      <Method id="8" name="setRemoteCamera" />
+      <Method id="9" name="battleFeedback_onBattleEvent" />
+      <Method id="10" name="battleFeedback_onDeath" />
+      <Method id="11" name="harm_receiveShot" />
+      <Method id="12" name="harm_receiveExplosion" />
+      <Method id="13" name="harm_receivePressure" />
+      <Method id="14" name="harm_receiveRamming" />
+      <Method id="15" name="harm_receiveMiss" />
+      <Method id="16" name="harm_receiveCeilingHit" />
+      <Method id="17" name="harm_receiveAttackResults" />
+      <Method id="18" name="harm_onCombatEquipmentShootingStarted" />
+      <Method id="19" name="sector_onEnterSector" />
+      <Method id="20" name="sector_onLeaveSector" />
+      <Method id="21" name="sector_onEnemySectorCaptured" />
+      <Method id="22" name="sector_onSectorShooting" />
+      <Method id="23" name="protectionZone_onEnterProtectionZone" />
+      <Method id="24" name="protectionZone_onLeaveProtectionZone" />
+      <Method id="25" name="protectionZone_onProtectionZoneShooting" />
+      <Method id="26" name="stepRepair_onAction" />
+      <Method id="27" name="destructibleEntity_showShotResults" />
+      <Method id="28" name="destructibleEntity_onDamaged" />
+      <Method id="29" name="destructibleEntity_onDestroyed" />
+      <Method id="30" name="destructibleEntity_onDefended" />
+      <Method id="31" name="defenderBonus_onOwnSectorCaptured" />
+      <Method id="32" name="defenderBonus_onOwnDestructibleDestroyed" />
+      <Method id="33" name="defenderBonus_onPlayerGroupChanged" />
+      <Method id="34" name="recoveryMechanic_onActivate" />
+      <Method id="35" name="recoveryMechanic_onDeactivate" />
+      <Method id="36" name="recoveryMechanic_startRecovering" />
+      <Method id="37" name="recoveryMechanic_stopRecovering" />
+      <Method id="38" name="respawnController_respawnScheduled" />
+      <Method id="39" name="respawnController_stopRespawn" />
+      <Method id="40" name="respawnController_suspendRespawn" />
+      <Method id="41" name="respawnController_respawn" />
+      <Method id="42" name="smokeController_onEnterSmoke" />
+      <Method id="43" name="smokeController_onLeaveSmoke" />
+      <Method id="44" name="updatePrebattleID" />
+      <Method id="45" name="moveWith" />
+      <Method id="46" name="trackWorldPointWithGun" />
+      <Method id="47" name="trackRelativePointWithGun" />
+      <Method id="48" name="stopTrackingWithGun" />
+      <Method id="49" name="trackVehicleWithGun" />
+      <Method id="50" name="changeSetting" />
+      <Method id="51" name="sendVisibilityDevelopmentInfo" />
+      <Method id="52" name="shoot" />
+      <Method id="53" name="teleportTo" />
+      <Method id="54" name="replenishAmmo" />
+      <Method id="55" name="setDevelopmentFeature" />
+      <Method id="56" name="receiveFakeShot" />
+      <Method id="57" name="setAvatar" />
+      <Method id="58" name="registerObserver" />
+      <Method id="59" name="onClientConnected" />
+      <Method id="60" name="onBattleRunning" />
+      <Method id="61" name="sendStateToOwnClient" />
+      <Method id="62" name="onEnemyVehicleShot" />
+      <Method id="63" name="scheduleExtraCheck" />
+      <Method id="64" name="onObservedByEnemy" />
+      <Method id="65" name="onDetectedByEnemy" />
+      <Method id="66" name="onConcealedFromEnemy" />
+      <Method id="67" name="updateVehicleAmmo" />
+      <Method id="68" name="onFlagAction" />
+      <Method id="69" name="receiveAssistsFromArena" />
+      <Method id="70" name="receiveFirstDetectionFromArena" />
+      <Method id="71" name="requestDamagedDevicesFromFor" />
+      <Method id="72" name="sendDamagedDevicesTo" />
+      <Method id="73" name="setHonorTitle" />
+      <Method id="74" name="receiveTaggedDestructibleKill" />
+      <Method id="75" name="setOnFireByExplosion" />
+      <Method id="76" name="onReceiveSpatialData" />
+      <Method id="77" name="onResourceAbsorbed" />
+      <Method id="78" name="setInsideResourcePoint" />
+      <Method id="79" name="grantWinPoints" />
+      <Method id="80" name="pauseMechanics" />
+      <Method id="81" name="startOrUpdateExtraFromOutside" />
+      <Method id="82" name="damageByEquipment" />
+      <Method id="83" name="updateOwnClientRTT" />
+      <Method id="84" name="receiveVisibilityUpdate" />
+      <Method id="85" name="requestVisibilityLists" />
+      <Method id="86" name="switchSetup" />
+      <Method id="87" name="setEquipmentApplicationPoint" />
+    </CellMethods>
+    <BaseMethods>
+      <Method id="0" name="onCreateCellSuccess" />
+      <Method id="1" name="setAvatar" />
+      <Method id="2" name="smartDestroy" />
+      <Method id="3" name="logAimMetrics" />
+    </BaseMethods>
+  </Entity>
+  <Entity id="6" name="AreaDestructibles">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="chunkID" />
+      <Property id="1" name="arenaTypeID" />
+      <Property id="2" name="arenaBonusType" />
+      <Property id="3" name="destroyedModules" />
+      <Property id="4" name="destroyedFragiles" />
+      <Property id="5" name="fallenColumns" />
+      <Property id="6" name="fallenTrees" />
+      <Property id="7" name="destructibles" />
+      <Property id="8" name="waters" />
+      <Property id="9" name="resetCount" />
+      <Property id="10" name="arenaBase" />
+      <Property id="11" name="arenaGeometryID" />
+      <Property id="12" name="cp" />
+      <Property id="13" name="arena" />
+    </Properties>
+    <CellMethods>
+      <Method id="0" name="artilleryController_addArtilleryPreparation" />
+      <Method id="1" name="artilleryController_addArtillery" />
+      <Method id="2" name="bomberController_addBomber" />
+      <Method id="3" name="projectileController_takeOverProjectile" />
+      <Method id="4" name="reset" />
+      <Method id="5" name="damageDestructible" />
+      <Method id="6" name="receiveTaggedDestructibleKill" />
+    </CellMethods>
+    <BaseMethods>
+      <Method id="0" name="createCellNearHere" />
+      <Method id="1" name="smartDestroy" />
+    </BaseMethods>
+  </Entity>
+  <Entity id="7" name="OfflineEntity">
+    <ClientMethods />
+    <Properties />
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="8" name="Flock">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="modelName" />
+      <Property id="1" name="modelName2" />
+      <Property id="2" name="modelCount" />
+      <Property id="3" name="yawSpeed" />
+      <Property id="4" name="pitchSpeed" />
+      <Property id="5" name="rollSpeed" />
+      <Property id="6" name="animSpeedMin" />
+      <Property id="7" name="animSpeedMax" />
+      <Property id="8" name="height" />
+      <Property id="9" name="radius" />
+      <Property id="10" name="deadZoneRadius" />
+      <Property id="11" name="speedAtBottom" />
+      <Property id="12" name="speedAtTop" />
+      <Property id="13" name="decisionTime" />
+      <Property id="14" name="flyAroundCenter" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="9" name="FlockExotic">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="animSpeedMax" />
+      <Property id="1" name="animSpeedMin" />
+      <Property id="2" name="modelCount" />
+      <Property id="3" name="modelName" />
+      <Property id="4" name="modelName2" />
+      <Property id="5" name="speed" />
+      <Property id="6" name="initSpeedRandom" />
+      <Property id="7" name="speedRandom" />
+      <Property id="8" name="accelerationTime" />
+      <Property id="9" name="triggerRadius" />
+      <Property id="10" name="explosionRadius" />
+      <Property id="11" name="spawnRadius" />
+      <Property id="12" name="spawnHeight" />
+      <Property id="13" name="flightRadius" />
+      <Property id="14" name="flightHeight" />
+      <Property id="15" name="flightAngleMin" />
+      <Property id="16" name="flightAngleMax" />
+      <Property id="17" name="flightOffsetFromOrigin" />
+      <Property id="18" name="lifeTime" />
+      <Property id="19" name="respawnTime" />
+      <Property id="20" name="flightSound" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="10" name="Login">
+    <ClientMethods>
+      <Method id="0" name="onKickedFromServer" />
+      <Method id="1" name="receiveLoginQueueNumber" />
+      <Method id="2" name="setPeripheryRoutingGroup" />
+    </ClientMethods>
+    <Properties>
+      <Property id="0" name="accountDBID_s" />
+      <Property id="1" name="loginPriority" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods>
+      <Method id="0" name="onEnqueued" />
+      <Method id="1" name="onQueueTurn" />
+      <Method id="2" name="onAccountClientReleased" />
+    </BaseMethods>
+  </Entity>
+  <Entity id="11" name="DetachedTurret">
+    <ClientMethods>
+      <Method id="0" name="onStaticCollision" />
+      <Method id="1" name="showDamageFromShot" />
+    </ClientMethods>
+    <Properties>
+      <Property id="0" name="cp" />
+      <Property id="1" name="arenaTypeID" />
+      <Property id="2" name="velocity" />
+      <Property id="3" name="arenaBase" />
+      <Property id="4" name="angularVelocity" />
+      <Property id="5" name="vehicleCompDescr" />
+      <Property id="6" name="outfitCD" />
+      <Property id="7" name="isUnderWater" />
+      <Property id="8" name="isCollidingWithWorld" />
+      <Property id="9" name="vehicleID" />
+      <Property id="10" name="attackerInfo" />
+      <Property id="11" name="vehicleInfo" />
+      <Property id="12" name="isAtackerProxy" />
+    </Properties>
+    <CellMethods>
+      <Method id="0" name="receiveShot" />
+      <Method id="1" name="receiveExplosion" />
+      <Method id="2" name="applyForceToCOM" />
+      <Method id="3" name="onDamageVehicle" />
+    </CellMethods>
+    <BaseMethods />
+  </Entity>
+  <Entity id="12" name="BootcampAccount">
+    <ClientMethods>
+      <Method id="0" name="finishBootcamp" />
+      <Method id="1" name="onBootcampEnqueued" />
+    </ClientMethods>
+    <Properties>
+      <Property id="0" name="markForDelete" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods>
+      <Method id="0" name="completeBootcampLesson" />
+      <Method id="1" name="saveBootcampCheckpoint" />
+      <Method id="2" name="changeBootcampLessonBonus" />
+      <Method id="3" name="requestBootcampQuit" />
+      <Method id="4" name="onBootcampEnqueued" />
+      <Method id="5" name="setParent" />
+      <Method id="6" name="resetBootcamp" />
+      <Method id="7" name="setToken" />
+      <Method id="8" name="addQuestToken" />
+    </BaseMethods>
+  </Entity>
+  <Entity id="13" name="DebugDrawEntity">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="drawObjects" />
+    </Properties>
+    <CellMethods>
+      <Method id="0" name="remove" />
+      <Method id="1" name="clear" />
+      <Method id="2" name="drawLine" />
+      <Method id="3" name="drawLines" />
+      <Method id="4" name="drawPath" />
+      <Method id="5" name="drawCube" />
+      <Method id="6" name="drawCubes" />
+      <Method id="7" name="drawSphere" />
+      <Method id="8" name="drawSpheres" />
+      <Method id="9" name="write3DText" />
+      <Method id="10" name="setLifeTime" />
+      <Method id="11" name="destroyEntity" />
+    </CellMethods>
+    <BaseMethods />
+  </Entity>
+  <Entity id="14" name="ClientSelectableCameraObject">
+    <ClientMethods />
+    <Properties />
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="15" name="ClientSelectableCameraVehicle">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="modelName" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="16" name="ClientSelectableWebLinksOpener">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="url" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="17" name="ClientSelectableEasterEgg">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="imageName" />
+      <Property id="1" name="multiLanguageSupport" />
+      <Property id="2" name="outlineModelName" />
+      <Property id="3" name="animationSequence" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="18" name="EmptyEntity">
+    <ClientMethods />
+    <Properties />
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="19" name="HeroTank">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="markerHeightFactor" />
+      <Property id="1" name="vehicleTurretYaw" />
+      <Property id="2" name="vehicleGunPitch" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="20" name="PlatoonTank">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="markerHeightFactor" />
+      <Property id="1" name="vehicleTurretYaw" />
+      <Property id="2" name="vehicleGunPitch" />
+      <Property id="3" name="slotIndex" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="21" name="PlatoonLighting">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="animationStateMachine" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="22" name="SectorBase">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="arenaBase" />
+      <Property id="1" name="arena" />
+      <Property id="2" name="radius" />
+      <Property id="3" name="isActive" />
+      <Property id="4" name="cp" />
+      <Property id="5" name="pointsPerSecond" />
+      <Property id="6" name="maxPointsPerSecond" />
+      <Property id="7" name="ownerStopsCapturing" />
+      <Property id="8" name="defaultPointsPerSecond" />
+      <Property id="9" name="defaultMaxPointsPerSecond" />
+      <Property id="10" name="isActive" />
+      <Property id="11" name="team" />
+      <Property id="12" name="baseID" />
+      <Property id="13" name="sectorID" />
+      <Property id="14" name="maxPoints" />
+      <Property id="15" name="initMaxPoints" />
+      <Property id="16" name="pointsPercentage" />
+      <Property id="17" name="capturingStopped" />
+      <Property id="18" name="onDamageCooldownTime" />
+      <Property id="19" name="radius" />
+      <Property id="20" name="isCaptured" />
+      <Property id="21" name="invadersCount" />
+      <Property id="22" name="hasExtraInvader" />
+      <Property id="23" name="expectedCaptureTime" />
+    </Properties>
+    <CellMethods>
+      <Method id="0" name="start" />
+      <Method id="1" name="stop" />
+      <Method id="2" name="setMaxPointsFactor" />
+      <Method id="3" name="reset" />
+    </CellMethods>
+    <BaseMethods>
+      <Method id="0" name="smartDestroy" />
+    </BaseMethods>
+  </Entity>
+  <Entity id="23" name="Sector">
+    <ClientMethods>
+      <Method id="0" name="showBomb" />
+    </ClientMethods>
+    <Properties>
+      <Property id="0" name="arena" />
+      <Property id="1" name="arenaBase" />
+      <Property id="2" name="arenaTypeID" />
+      <Property id="3" name="groupID" />
+      <Property id="4" name="sectorID" />
+      <Property id="5" name="playerGroup" />
+      <Property id="6" name="IDInPlayerGroup" />
+      <Property id="7" name="lengthX" />
+      <Property id="8" name="lengthZ" />
+      <Property id="9" name="team" />
+      <Property id="10" name="state" />
+      <Property id="11" name="initialState" />
+      <Property id="12" name="transitionTime" />
+      <Property id="13" name="endOfTransitionPeriod" />
+      <Property id="14" name="mainDirection" />
+      <Property id="15" name="isActive" />
+      <Property id="16" name="cp" />
+      <Property id="17" name="isLast" />
+    </Properties>
+    <CellMethods>
+      <Method id="0" name="start" />
+      <Method id="1" name="reset" />
+      <Method id="2" name="open" />
+      <Method id="3" name="transition" />
+      <Method id="4" name="stop" />
+      <Method id="5" name="harm_receiveAttackResults" />
+    </CellMethods>
+    <BaseMethods>
+      <Method id="0" name="smartDestroy" />
+    </BaseMethods>
+  </Entity>
+  <Entity id="24" name="DestructibleEntity">
+    <ClientMethods>
+      <Method id="0" name="onHealthChanged" />
+      <Method id="1" name="showDamageFromShot" />
+      <Method id="2" name="showDamageFromExplosion" />
+    </ClientMethods>
+    <Properties>
+      <Property id="0" name="arena" />
+      <Property id="1" name="arenaBase" />
+      <Property id="2" name="isActive" />
+      <Property id="3" name="team" />
+      <Property id="4" name="destructibleEntityID" />
+      <Property id="5" name="health" />
+      <Property id="6" name="maxHealth" />
+      <Property id="7" name="isDestructibleDestroyed" />
+      <Property id="8" name="udoTypeID" />
+      <Property id="9" name="typeID" />
+      <Property id="10" name="initActive" />
+      <Property id="11" name="linkedMapActivities" />
+      <Property id="12" name="damageStickers" />
+      <Property id="13" name="explosionDamageFactor" />
+      <Property id="14" name="cp" />
+    </Properties>
+    <CellMethods>
+      <Method id="0" name="receiveAndTakeOverProjectile" />
+      <Method id="1" name="receiveExplosion" />
+      <Method id="2" name="receiveRamming" />
+      <Method id="3" name="start" />
+      <Method id="4" name="stop" />
+      <Method id="5" name="reset" />
+      <Method id="6" name="onEnemyVehicleShot" />
+      <Method id="7" name="scheduleExtraCheck" />
+    </CellMethods>
+    <BaseMethods>
+      <Method id="0" name="smartDestroy" />
+    </BaseMethods>
+  </Entity>
+  <Entity id="25" name="StepRepairPoint">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="initTeam" />
+      <Property id="1" name="team" />
+      <Property id="2" name="pointsPerStep" />
+      <Property id="3" name="repairTime" />
+      <Property id="4" name="secondsCooldownPerStep" />
+      <Property id="5" name="baseSecondsCooldownAfterRepair" />
+      <Property id="6" name="percentageShellsPerStep" />
+      <Property id="7" name="radius" />
+      <Property id="8" name="healGroup" />
+    </Properties>
+    <CellMethods>
+      <Method id="0" name="changeOwnerTeam" />
+      <Method id="1" name="setCooldownAfterRepair" />
+    </CellMethods>
+    <BaseMethods />
+  </Entity>
+  <Entity id="26" name="ProtectionZone">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="arena" />
+      <Property id="1" name="arenaBase" />
+      <Property id="2" name="zoneID" />
+      <Property id="3" name="lengthX" />
+      <Property id="4" name="lengthZ" />
+      <Property id="5" name="team" />
+      <Property id="6" name="maxStayTime" />
+      <Property id="7" name="numberOfTurrets" />
+      <Property id="8" name="minTurretShootInterval" />
+      <Property id="9" name="minShootingTime" />
+      <Property id="10" name="shotDuration" />
+      <Property id="11" name="shotRadius" />
+      <Property id="12" name="shotShellNation" />
+      <Property id="13" name="shotShellName" />
+      <Property id="14" name="shotPiercingPower" />
+      <Property id="15" name="mainDirection" />
+      <Property id="16" name="isActive" />
+      <Property id="17" name="cp" />
+    </Properties>
+    <CellMethods>
+      <Method id="0" name="start" />
+      <Method id="1" name="reset" />
+      <Method id="2" name="stop" />
+      <Method id="3" name="harm_receiveAttackResults" />
+    </CellMethods>
+    <BaseMethods>
+      <Method id="0" name="smartDestroy" />
+    </BaseMethods>
+  </Entity>
+  <Entity id="27" name="HangarPoster">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="minAlpha" />
+      <Property id="1" name="maxAlphaDistance" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="28" name="TeamInfo">
+    <ClientMethods>
+      <Method id="0" name="onCombatEquipmentUsed" />
+    </ClientMethods>
+    <Properties>
+      <Property id="0" name="throttleFilterHardThresholdCell" />
+      <Property id="1" name="throttleFilterHardThresholdBase" />
+      <Property id="2" name="teamID" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="29" name="AreaOfEffect">
+    <ClientMethods>
+      <Method id="0" name="playEffect" />
+    </ClientMethods>
+    <Properties>
+      <Property id="0" name="arenaID" />
+      <Property id="1" name="vehicleID" />
+      <Property id="2" name="equipmentID" />
+      <Property id="3" name="launchTime" />
+      <Property id="4" name="strikeTime" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="30" name="AttackBomber">
+    <ClientMethods />
+    <Properties />
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="31" name="AttackArtilleryFort">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="team" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="32" name="PersonalDeathZone">
+    <ClientMethods />
+    <Properties />
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="33" name="ClientSelectableRankedObject">
+    <ClientMethods />
+    <Properties />
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="34" name="ClientSelectableHangarsSwitcher">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="destHangar" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="35" name="StaticDeathZone">
+    <ClientMethods>
+      <Method id="0" name="onDeathZoneDamage" />
+      <Method id="1" name="onDeathZoneNotification" />
+      <Method id="2" name="onEntityEnteredInZone" />
+      <Method id="3" name="onEntityLeftZone" />
+    </ClientMethods>
+    <Properties>
+      <Property id="0" name="zoneId" />
+      <Property id="1" name="isActive" />
+      <Property id="2" name="deathzone_size" />
+      <Property id="3" name="vehiclesUnderFire" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="36" name="BasicMine">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="equipmentID" />
+      <Property id="1" name="ownerVehicleID" />
+      <Property id="2" name="isDetonated" />
+      <Property id="3" name="isActivated" />
+      <Property id="4" name="activationTimeDelay" />
+      <Property id="5" name="mineNumber" />
+      <Property id="6" name="isMarkerEnabled" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="37" name="ApplicationPoint">
+    <ClientMethods />
+    <Properties>
+      <Property id="0" name="vehicleID" />
+      <Property id="1" name="equipmentID" />
+      <Property id="2" name="launchTime" />
+      <Property id="3" name="level" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="38" name="ApplicationPointWithProximity">
+    <ClientMethods />
+    <Properties />
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+  <Entity id="39" name="NetworkEntity">
+    <ClientMethods>
+      <Method id="0" name="activateGameObject" />
+      <Method id="1" name="activateGameObjectUnique" />
+      <Method id="2" name="deactivateGameObject" />
+      <Method id="3" name="deactivateGameObjectUnique" />
+      <Method id="4" name="createGameObject" />
+      <Method id="5" name="removeGameObject" />
+      <Method id="6" name="removeGameObjectUnique" />
+    </ClientMethods>
+    <Properties>
+      <Property id="0" name="unique_id" />
+      <Property id="1" name="prefab_path" />
+      <Property id="2" name="scale" />
+      <Property id="3" name="goState" />
+      <Property id="4" name="useDetailedPosition" />
+    </Properties>
+    <CellMethods />
+    <BaseMethods />
+  </Entity>
+</Entities>
