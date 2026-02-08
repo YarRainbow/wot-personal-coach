@@ -1,0 +1,36 @@
+{
+    "packetTypes": {
+        "0x03": {
+            "id": "ENTITY_ENTER"
+        },
+        "0x05": {
+            "id": "ENTITY_LEAVE"
+        },
+        "0x07": {
+            "id": "ENTITY_PROPERTY_UPDATE",
+            "subtypes": {
+                "0x05": "HEALTH_UPDATE",
+                "0x07": "TRACK_DESTROYED"
+            }
+        },
+        "0x08": {
+            "id": "ENTITY_METHOD_CALL",
+            "subtypes": {
+                "0x01": "DAMAGE_ARGUMENT",
+                "0x05": "SHOT_HIT",
+                "0x0B": "MODULE_DAMAGE",
+                "0x11": "TRACER",
+                "0x17": "TRACKED"
+            }
+        },
+        "0x0A": {
+            "id": "ENTITY_MOVE"
+        },
+        "0x20": {
+            "id": "ENTITY_TRACKED"
+        },
+        "0x23": {
+            "id": "CHAT_MESSAGE"
+        }
+    }
+}

@@ -9,8 +9,13 @@ use std::fs;
 #[command(author, version, about, long_about = None)]
 struct Args {
     /// Path to the .wotreplay file or directory containing replays
-    #[arg(required = true)]
+    #[arg(long, required = true)]
     input: PathBuf,
+
+    /// Game version (e.g. "1_25_0" or "wot_eu_1_25_0")
+    /// Required to load the correct entity definitions.
+    #[arg(long, required = true)]
+    version: String,
 
     /// Output to stdout as JSON lines
     #[arg(short, long, default_value_t = false)]
@@ -35,6 +40,22 @@ fn main() {
         vec![args.input.clone()]
     };
 
+    // Load Definitions once
+    // We expect the version string to be safe (e.g. "wot_eu_v1_25_1_0" or just "1_25_1_0" if we construct it)
+    // The user provided version string is passed directly.
+    
+    // We need a way to construct the "variant" name if the user passes just "1.25.1.0". 
+    // But the user said "do not trying to detect it".
+    // So we assume args.version is the full ID or we try to load it directly.
+    
+    let defs = match replays_parser::definitions::Definitions::load(&args.version) {
+        Ok(d) => Some(d),
+        Err(e) => {
+            eprintln!("Warning: Failed to load definitions for version '{}': {}", args.version, e);
+            None
+        }
+    };
+
     // For --stats mode, we need to collect results from parallel iteration
     if args.stats {
         use std::sync::Mutex;
@@ -48,58 +69,6 @@ fn main() {
                 Ok(replay) => {
                     use std::io::Cursor;
                     use byteorder::{ReadBytesExt, LittleEndian};
-
-                    // Load Definitions
-                    // Try to normalize version string to match our IDs format
-                    // e.g. "World of Tanks v.1.25.1.0 #1234" -> "wot_v1_25_1_0" or close to it
-                    // For now, let's just use the build.rs logic: match exact or fallback
-                    // Actually, build.rs keys are "wot_eu_v1_...", so we need to guess or user provides it?
-                    // The internal replay version string is like "1.25.1.0".
-                    // We might need a mapping function. 
-                    // detailed matching is complex, for MVP let's just try to load *any* definition that matches version number.
-                    // Or iterate all available definitions in definitions.rs? No public iterator.
-                    
-                    // Simple logic:
-                    // 1. Try "wot_v{version_clean}"
-                    // 2. Try "wot_eu_v{version_clean}"
-                    
-                    let raw_ver = &replay.battle_config.client_version_from_exe;
-                    let clean_ver = raw_ver.replace('.', "_");
-                    
-                    // Hybrid Loading Strategy:
-                    // 1. Try to load from "ids_wot_v{ver}.json" in current dir (Runtime override)
-                    // 2. Try embedded "wot_v{ver}"
-                    // 3. Try fallback variants
-                    
-                    let variants = [
-                        format!("wot_v{}", clean_ver),
-                        format!("wot_eu_v{}", clean_ver),
-                        format!("wot_ru_v{}", clean_ver),
-                        format!("wot_na_v{}", clean_ver),
-                        format!("wot_asia_v{}", clean_ver),
-                    ];
-                    
-                    let mut defs = None;
-                    
-                    // 1. Try Files
-                    for variant in &variants {
-                        let filename = format!("ids_{}.json", variant);
-                        if let Ok(d) = replays_parser::definitions::Definitions::load_from_file(std::path::Path::new(&filename)) {
-                            println!("  [Loaded Overrides from {}]", filename);
-                            defs = Some(d);
-                            break;
-                        }
-                    }
-                    
-                    // 2. Try Embedded
-                    if defs.is_none() {
-                        for variant in &variants {
-                           if let Some(d) = replays_parser::definitions::Definitions::load_embedded(variant) {
-                               defs = Some(d);
-                               break;
-                           }
-                        }
-                    }
 
                     let mut cursor = Cursor::new(replay.packets_buffer.clone());
                     let packet_stream = replays_parser::packet_stream::PacketStream::new(&mut cursor);
@@ -174,12 +143,19 @@ fn main() {
         for (ptype, total_count) in sorted_types {
             let pct = if packets > 0 { (*total_count as f64 / packets as f64) * 100.0 } else { 0.0 };
             
-            // Try to find name for packet type
-            // (We don't have reference to generic defs here, using hardcoded map from generate_ids for backup?)
-            // Ideally we'd have a 'default' definition or use the one from the first replay.
-            // For now just print Hex.
+            let mut name_desc = String::new();
+            if let Some(d) = &defs {
+                 let key = format!("0x{:02X}", ptype);
+                 if let Some(val) = d.packet_types.get(&key) {
+                     if let Some(id) = val.as_object().and_then(|o| o.get("id")).and_then(|s| s.as_str()) {
+                         name_desc = format!("({})", id);
+                     } else if let Some(s) = val.as_str() {
+                         name_desc = format!("({})", s);
+                     }
+                 }
+            }
             
-            println!("    0x{:02X}   | {:>10} | {:>7.2}% |", ptype, total_count, pct);
+            println!("    0x{:02X}   | {:>10} | {:>7.2}% | {}", ptype, total_count, pct, name_desc);
 
             // Print subtypes if any exist for this type
             let mut sub_types: Vec<_> = stats.iter()
@@ -216,47 +192,13 @@ fn main() {
                         println!("    Version: {}", replay.battle_config.client_version_from_exe);
                         println!("    Date: {}", replay.battle_config.date_time);
 
-                        // Load Definitions
-                        let raw_ver = &replay.battle_config.client_version_from_exe;
-                        let clean_ver = raw_ver.replace('.', "_");
-                        
-                         let variants = [
-                            format!("wot_v{}", clean_ver),
-                            format!("wot_eu_v{}", clean_ver),
-                            format!("wot_ru_v{}", clean_ver),
-                            format!("wot_na_v{}", clean_ver),
-                            format!("wot_asia_v{}", clean_ver),
-                        ];
-                        
-                        let mut defs = None;
-                        
-                        // 1. Try Files
-                        for variant in &variants {
-                            let filename = format!("ids_{}.json", variant);
-                            if let Ok(d) = replays_parser::definitions::Definitions::load_from_file(std::path::Path::new(&filename)) {
-                                println!("  [Loaded Overrides from {}]", filename);
-                                defs = Some(d);
-                                break;
-                            }
-                        }
-                        
-                        // 2. Try Embedded
-                        if defs.is_none() {
-                            for variant in &variants {
-                               if let Some(d) = replays_parser::definitions::Definitions::load_embedded(variant) {
-                                   defs = Some(d);
-                                   break;
-                               }
-                            }
-                        }
-                            
-                        if let Some(_) = defs {
-                             // Already printed loaded info for file override
-                             if defs.is_some() {
-                                 // println!("  [Definitions Loaded for v{}]", clean_ver); 
-                             }
+                        println!("    Version: {}", replay.battle_config.client_version_from_exe);
+                        println!("    Date: {}", replay.battle_config.date_time);
+
+                        if defs.is_some() {
+                             // println!("  [Definitions Loaded]"); 
                         } else {
-                             println!("  [No Definitions Found for v{}]", clean_ver);
+                             println!("  [No Definitions Loaded]");
                         }
 
                         println!("  Battle Results: {}", if replay.battle_results.is_some() { "present" } else { "missing" });
@@ -280,10 +222,11 @@ fn main() {
                                          let key = format!("0x{:02X}", p.packet_type);
                                          if let Some(val) = d.packet_types.get(&key) {
                                              if let Some(name) = val.as_str() {
+                                                 // Legacy support
                                                  desc = format!("({})", name);
                                              } else if let Some(obj) = val.as_object() {
-                                                 if let Some(name) = obj.get("name").and_then(|n| n.as_str()) {
-                                                     desc = format!("({})", name);
+                                                 if let Some(id) = obj.get("id").and_then(|n| n.as_str()) {
+                                                     desc = format!("({})", id);
                                                  }
                                              }
                                          }

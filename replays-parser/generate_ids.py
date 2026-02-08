@@ -228,23 +228,47 @@ def main():
         
         full_data = {}
         
-        # Load Manual Packet Types from JSON
-        manual_defs_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "manual_packet_defs.json")
+        # 2. Load Packet Types from message_codes directory
+        # Strategy:
+        # 1. Determine "game code" (e.g. wot_eu) from the path or similar logic.
+        #    For now, we can try to guess or just default to 'wot_eu' if not clear.
+        #    But since we have region detection in detect_game_version, let's use that.
+        
+        region_code = "wot_eu" # Default fallback
+        if "ru" in version_tag: region_code = "wot_ru"
+        elif "na" in version_tag: region_code = "wot_na"
+        elif "asia" in version_tag: region_code = "wot_asia"
+        elif "wot_cn" in version_tag: region_code = "wot_cn"
+        
+        # Base directory for message codes
+        msg_base = os.path.join(os.path.dirname(os.path.abspath(__file__)), "message_codes", region_code)
+        
         packet_types = {}
         
-        if os.path.exists(manual_defs_path):
-            print(f"DEBUG: Loading manual packet definitions from {manual_defs_path}")
-            try:
-                with open(manual_defs_path, 'r') as f:
-                    manual_data = json.load(f)
-                    packet_types = manual_data.get("packetTypes", {})
-            except Exception as e:
-                print(f"WARNING: Failed to load manual_packet_defs.json: {e}")
+        # Load _default.json
+        default_path = os.path.join(msg_base, "_default.json")
+        if os.path.exists(default_path):
+             print(f"DEBUG: Loading default packet definitions from {default_path}")
+             try:
+                 with open(default_path, 'r') as f:
+                     manual_data = json.load(f)
+                     packet_types = manual_data.get("packetTypes", {})
+             except Exception as e:
+                 print(f"WARNING: Failed to load {default_path}: {e}")
         else:
-             print("DEBUG: manual_packet_defs.json not found. Using empty packet types.")
-             # User requested to remove hardcoded hex if not correct. 
-             # We start empty and let user populate the JSON.
-             pass
+             print(f"WARNING: No default packet definitions found at {default_path}")
+
+        # Load version override if exists (e.g. 1.25.0.json)
+        # version_tag is like "wot_eu_v1_25_1_0"
+        # We need extracting "1.25.1.0" or similar
+        # Let's try to match the version part.
+        
+        # Note: Implementation Plan said "Load _default.json first, then {version}.json".
+        # We need to correctly identify the version file name. 
+        # For now, let's assume we might find it by the safe version string.
+        # But commonly overrides might be rare.
+        
+        # (Extension point for future: load specific version overrides)
 
         # 2. Process each Entity
         for ent_id, ent_name in entity_types.items():
@@ -347,11 +371,15 @@ def main():
             f.write("(From wotreplay-parser reference)\n")
             for pid, pdata in packet_types.items():
                 if isinstance(pdata, str):
+                     # Legacy support or simple string
                     f.write(f"{pid}: {pdata}\n")
-                else:
-                    f.write(f"{pid}: {pdata['name']}\n")
-                    for subid, subname in pdata['subtypes'].items():
-                        f.write(f"  Subtype {subid}: {subname}\n")
+                elif isinstance(pdata, dict):
+                    # New format: {"id": "NAME", "subtypes": ...}
+                    name = pdata.get('id', 'UNKNOWN')
+                    f.write(f"{pid}: {name}\n")
+                    if 'subtypes' in pdata:
+                        for subid, subname in pdata['subtypes'].items():
+                            f.write(f"  Subtype {subid}: {subname}\n")
             f.write("\n--- Entity Method IDs (Script Level) ---\n\n")
 
             for ent_id in sorted_ids:
